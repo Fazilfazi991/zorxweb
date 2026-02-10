@@ -20,11 +20,12 @@ const Portfolio = () => {
     ];
 
     const videos = [
-        { id: 1, title: "Brand Commercial", thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80", category: "Commercial", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
-        { id: 2, title: "Product Launch", thumbnail: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=80", category: "Event", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
-        { id: 3, title: "Social Media Reel", thumbnail: "https://images.unsplash.com/photo-1574717432707-c257197fba9a?w=800&q=80", category: "Social", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
-        { id: 4, title: "Corporate Story", thumbnail: "https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=800&q=80", category: "Corporate", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
-        { id: 5, title: "Music Video", thumbnail: "https://images.unsplash.com/photo-1518135714426-c18f5ffb6f4d?w=800&q=80", category: "Music", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
+        { id: 1, title: "Brand Commercial", thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80", category: "Commercial", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "video" },
+        { id: 2, title: "Product Launch", thumbnail: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=80", category: "Event", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "vertical" },
+        { id: 3, title: "Social Media Reel", thumbnail: "https://images.unsplash.com/photo-1574717432707-c257197fba9a?w=800&q=80", category: "Social", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "vertical" },
+        { id: 4, title: "Corporate Story", thumbnail: "https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=800&q=80", category: "Corporate", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "video" },
+        { id: 5, title: "Music Video", thumbnail: "https://images.unsplash.com/photo-1518135714426-c18f5ffb6f4d?w=800&q=80", category: "Music", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "video" },
+        { id: 6, title: "Fashion Edit", thumbnail: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80", category: "Fashion", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "vertical" },
     ];
 
     const posters = [
@@ -132,11 +133,12 @@ const Portfolio = () => {
                             <h2 className="heading-section">Video Productions</h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[250px]">
                             {videos.map((video) => (
                                 <Dialog key={video.id}>
                                     <DialogTrigger asChild>
-                                        <div className="group relative rounded-2xl overflow-hidden aspect-video shadow-sm hover:shadow-md transition-all cursor-pointer">
+                                        <div className={`group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer ${video.aspect === 'vertical' ? 'row-span-2 aspect-[9/16]' : 'aspect-video'
+                                            }`}>
                                             <img
                                                 src={video.thumbnail}
                                                 alt={video.title}
@@ -153,8 +155,9 @@ const Portfolio = () => {
                                             </div>
                                         </div>
                                     </DialogTrigger>
-                                    <DialogContent className="max-w-4xl p-0 overflow-hidden bg-black border-none text-white">
-                                        <div className="aspect-video w-full">
+                                    <DialogContent className={`p-0 overflow-hidden bg-black border-none text-white ${video.aspect === 'vertical' ? 'max-w-md h-[80vh]' : 'max-w-4xl'
+                                        }`}>
+                                        <div className={`w-full ${video.aspect === 'vertical' ? 'h-full' : 'aspect-video'}`}>
                                             <iframe
                                                 width="100%"
                                                 height="100%"
