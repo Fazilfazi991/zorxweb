@@ -87,24 +87,52 @@ const Portfolio = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {websites.map((site) => (
-                                <div key={site.id} className="group relative rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-white">
-                                    <div className="aspect-video overflow-hidden">
-                                        <img
-                                            src={site.image}
-                                            alt={site.title}
-                                            className="w-full h-full object-cover object-top transition-all duration-[6s] ease-linear group-hover:object-bottom"
-                                            onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
-                                        />
-                                    </div>
-                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <a href={site.link} target="_blank" rel="noreferrer" className="px-6 py-2 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform z-10">
-                                            Visit Site
-                                        </a>
-                                    </div>
-                                    <div className="p-4 bg-card border-t border-border relative z-20">
-                                        <h3 className="text-lg font-bold text-center">{site.title}</h3>
-                                    </div>
-                                </div>
+                                <Dialog key={site.id}>
+                                    <DialogTrigger asChild>
+                                        <div className="group relative rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-white cursor-pointer">
+                                            <div className="aspect-video overflow-hidden">
+                                                <img
+                                                    src={site.image}
+                                                    alt={site.title}
+                                                    className="w-full h-full object-cover object-top transition-all duration-[6s] ease-linear group-hover:object-bottom"
+                                                    onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
+                                                />
+                                            </div>
+                                            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col gap-3 items-center justify-center">
+                                                <div className="px-6 py-2 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform z-10 pointer-events-none">
+                                                    Click to Preview
+                                                </div>
+                                                <a
+                                                    href={site.link}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="text-white hover:underline text-sm z-20 pointer-events-auto"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                >
+                                                    Visit Live Site
+                                                </a>
+                                            </div>
+                                            <div className="p-4 bg-card border-t border-border relative z-20">
+                                                <h3 className="text-lg font-bold text-center">{site.title}</h3>
+                                            </div>
+                                        </div>
+                                    </DialogTrigger>
+                                    <DialogContent className="max-w-5xl h-[90vh] p-0 overflow-hidden bg-background border-border">
+                                        <div className="p-4 border-b border-border flex justify-between items-center bg-card/50 backdrop-blur-sm absolute top-0 left-0 right-0 z-50">
+                                            <DialogTitle className="text-xl font-bold">{site.title}</DialogTitle>
+                                            <a href={site.link} target="_blank" rel="noreferrer" className="text-primary hover:underline text-sm flex items-center gap-1">
+                                                Visit Live Site <ArrowRight className="w-3 h-3" />
+                                            </a>
+                                        </div>
+                                        <div className="w-full h-full overflow-y-auto pt-16">
+                                            <img
+                                                src={site.image}
+                                                alt={`${site.title} Full Preview`}
+                                                className="w-full h-auto"
+                                            />
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
                             ))}
                         </div>
 
