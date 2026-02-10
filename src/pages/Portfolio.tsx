@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { ArrowRight, Sparkles, Monitor, Video, Image as ImageIcon, Camera, BrainCircuit } from "lucide-react";
 import { Link } from "react-router-dom";
 
