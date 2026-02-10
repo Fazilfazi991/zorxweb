@@ -32,8 +32,8 @@ const Portfolio = () => {
         { id: 1, title: "Summer Campaign", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1280&q=80" },
         { id: 2, title: "Event Promo", image: "https://images.unsplash.com/photo-1626785774573-4b79931434f3?w=1280&q=80" },
         { id: 3, title: "Product Showcase", image: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=1280&q=80" },
-        { id: 4, title: "Brand Identity", image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1280&q=80" },
-        { id: 5, title: "Digital Art", image: "https://images.unsplash.com/photo-1558655146-d09347e0c766?w=1280&q=80" },
+        { id: 4, title: "Brand Identity", image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?w=1280&q=80" },
+        { id: 5, title: "Digital Art", image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1280&q=80" },
     ];
 
     const aiVideos = [
@@ -53,6 +53,12 @@ const Portfolio = () => {
 
     return (
         <div className="min-h-screen bg-background overflow-x-hidden">
+            <SEO
+                title="Our Portfolio | ZORX Media | Digital Agency Dubai"
+                description="Explore our portfolio of successful digital marketing campaigns, web designs, and video productions for clients in Dubai and the UAE."
+                canonical="/portfolio"
+                keywords="digital marketing portfolio, web design portfolio dubai, video production dubai work"
+            />
             <Navbar />
             <main>
                 {/* Hero Section */}
