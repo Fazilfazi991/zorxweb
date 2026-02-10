@@ -92,7 +92,7 @@ const Portfolio = () => {
                                             src={site.image}
                                             alt={site.title}
                                             className="w-full h-full object-cover object-top transition-all ease-linear group-hover:object-bottom"
-                                            style={{ transitionDuration: '10s' }}
+                                            style={{ transitionDuration: '6s' }}
                                             onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
                                         />
                                     </div>
