@@ -7,11 +7,16 @@ import { Link } from "react-router-dom";
 const Portfolio = () => {
     // Demo Content Data
     const websites = [
+    const websites = [
         { id: 1, title: "Neonights", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fneonights.ae?w=1280&h=8000", link: "https://neonights.ae" },
         { id: 2, title: "BWMC", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fbwmc.ae?w=1280&h=8000", link: "https://bwmc.ae" },
         { id: 3, title: "Tonio Senora", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ftoniosenora.com?w=1280&h=8000", link: "https://toniosenora.com" },
-        { id: 4, title: "Veriquendt", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fveriquendt.com?w=1280&h=8000", link: "https://veriquendt.com" },
+        { id: 4, title: "Veriquondt", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fveriquondt.com?w=1280&h=8000", link: "https://veriquondt.com" },
         { id: 5, title: "FM Auditors", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ffmauditors.com?w=1280&h=8000", link: "https://fmauditors.com" },
+        { id: 6, title: "JH Accounting", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fjhaccounting.ae?w=1280&h=8000", link: "https://jhaccounting.ae" },
+        { id: 7, title: "Ikigai Auto Parts", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fikigaiautoparts.com?w=1280&h=8000", link: "https://ikigaiautoparts.com" },
+        { id: 8, title: "Step Vision Hotel Supplies", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fstepvisionhotelsupplies.com?w=1280&h=8000", link: "https://stepvisionhotelsupplies.com" },
+        { id: 9, title: "Universal Yoga", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Funiversalyoga.ae?w=1280&h=8000", link: "https://universalyoga.ae" },
     ];
 
     const videos = [
