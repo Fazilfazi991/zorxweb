@@ -20,12 +20,12 @@ const Portfolio = () => {
     ];
 
     const videos = [
-        { id: 1, title: "Brand Commercial", thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80", category: "Commercial", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "video" },
+        { id: 1, title: "Brand Commercial", thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1280&q=80", category: "Commercial", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "video" },
         { id: 2, title: "Product Launch", thumbnail: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=80", category: "Event", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "vertical" },
-        { id: 3, title: "Social Media Reel", thumbnail: "https://images.unsplash.com/photo-1574717432707-c257197fba9a?w=800&q=80", category: "Social", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "vertical" },
-        { id: 4, title: "Corporate Story", thumbnail: "https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=800&q=80", category: "Corporate", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "video" },
-        { id: 5, title: "Music Video", thumbnail: "https://images.unsplash.com/photo-1518135714426-c18f5ffb6f4d?w=800&q=80", category: "Music", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "video" },
-        { id: 6, title: "Fashion Edit", thumbnail: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80", category: "Fashion", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "vertical" },
+        { id: 3, title: "Social Media Reel", thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80", category: "Social", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "vertical" },
+        { id: 4, title: "Corporate Story", thumbnail: "https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=1280&q=80", category: "Corporate", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "video" },
+        { id: 5, title: "Music Video", thumbnail: "https://images.unsplash.com/photo-1514525253440-b393452e8d26?w=1280&q=80", category: "Music", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "video" },
+        { id: 6, title: "Fashion Edit", thumbnail: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80", category: "Fashion", video: "https://www.youtube.com/embed/LXb3EKWsInQ", aspect: "vertical" },
     ];
 
     const posters = [
@@ -37,10 +37,10 @@ const Portfolio = () => {
     ];
 
     const aiVideos = [
-        { id: 1, title: "Future City", thumbnail: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80", category: "AI Generated", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
-        { id: 2, title: "Abstract Motion", thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80", category: "AI Art", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
-        { id: 3, title: "Neural Dreams", thumbnail: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&q=80", category: "Deep Learning", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
-        { id: 4, title: "Fluid Dynamics", thumbnail: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&q=80", category: "Simulation", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
+        { id: 1, title: "Future City", thumbnail: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1280&q=80", category: "AI Generated", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
+        { id: 2, title: "Abstract Motion", thumbnail: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=1280&q=80", category: "AI Art", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
+        { id: 3, title: "Neural Dreams", thumbnail: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1280&q=80", category: "Deep Learning", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
+        { id: 4, title: "Fluid Dynamics", thumbnail: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=1280&q=80", category: "Simulation", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
     ];
 
     const photoshoots = [
