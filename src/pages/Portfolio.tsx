@@ -134,22 +134,39 @@ const Portfolio = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {videos.map((video) => (
-                                <div key={video.id} className="group relative rounded-2xl overflow-hidden aspect-video shadow-sm hover:shadow-md transition-all cursor-pointer">
-                                    <img
-                                        src={video.thumbnail}
-                                        alt={video.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[20px] border-l-white border-b-[10px] border-b-transparent ml-1" />
+                                <Dialog key={video.id}>
+                                    <DialogTrigger asChild>
+                                        <div className="group relative rounded-2xl overflow-hidden aspect-video shadow-sm hover:shadow-md transition-all cursor-pointer">
+                                            <img
+                                                src={video.thumbnail}
+                                                alt={video.title}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                                                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                                    <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[20px] border-l-white border-b-[10px] border-b-transparent ml-1" />
+                                                </div>
+                                            </div>
+                                            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                                                <p className="text-primary-light text-sm font-medium mb-1">{video.category}</p>
+                                                <h3 className="text-white text-xl font-bold">{video.title}</h3>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                                        <p className="text-primary-light text-sm font-medium mb-1">{video.category}</p>
-                                        <h3 className="text-white text-xl font-bold">{video.title}</h3>
-                                    </div>
-                                </div>
+                                    </DialogTrigger>
+                                    <DialogContent className="max-w-4xl p-0 overflow-hidden bg-black border-none text-white">
+                                        <div className="aspect-video w-full">
+                                            <iframe
+                                                width="100%"
+                                                height="100%"
+                                                src={`${video.video}?autoplay=1`}
+                                                title={video.title}
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowFullScreen
+                                                className="border-none"
+                                            />
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
                             ))}
                         </div>
 
