@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { ArrowRight, Sparkles, Monitor, Video, Image as ImageIcon, Camera, BrainCircuit } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -19,11 +20,11 @@ const Portfolio = () => {
     ];
 
     const videos = [
-        { id: 1, title: "Brand Commercial", thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80", category: "Commercial" },
-        { id: 2, title: "Product Launch", thumbnail: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=80", category: "Event" },
-        { id: 3, title: "Social Media Reel", thumbnail: "https://images.unsplash.com/photo-1574717432707-c257197fba9a?w=800&q=80", category: "Social" },
-        { id: 4, title: "Corporate Story", thumbnail: "https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=800&q=80", category: "Corporate" },
-        { id: 5, title: "Music Video", thumbnail: "https://images.unsplash.com/photo-1518135714426-c18f5ffb6f4d?w=800&q=80", category: "Music" },
+        { id: 1, title: "Brand Commercial", thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80", category: "Commercial", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
+        { id: 2, title: "Product Launch", thumbnail: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=80", category: "Event", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
+        { id: 3, title: "Social Media Reel", thumbnail: "https://images.unsplash.com/photo-1574717432707-c257197fba9a?w=800&q=80", category: "Social", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
+        { id: 4, title: "Corporate Story", thumbnail: "https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=800&q=80", category: "Corporate", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
+        { id: 5, title: "Music Video", thumbnail: "https://images.unsplash.com/photo-1518135714426-c18f5ffb6f4d?w=800&q=80", category: "Music", video: "https://www.youtube.com/embed/LXb3EKWsInQ" },
     ];
 
     const posters = [
