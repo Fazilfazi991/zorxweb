@@ -45,13 +45,6 @@ const Portfolio = () => {
         { id: 5, title: "Studio Session", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80" },
     ];
 
-    // Duplicate arrays for seamless marquee (x4 for small arrays to ensure smoothness)
-    const marqueeWebsites = [...websites, ...websites];
-    const marqueeVideos = [...videos, ...videos];
-    const marqueePosters = [...posters, ...posters, ...posters];
-    const marqueeAiVideos = [...aiVideos, ...aiVideos, ...aiVideos];
-    const marqueePhotoshoots = [...photoshoots, ...photoshoots, ...photoshoots];
-
     return (
         <div className="min-h-screen bg-background overflow-x-hidden">
             <Navbar />
@@ -83,211 +76,195 @@ const Portfolio = () => {
 
                 {/* Websites Section */}
                 <section className="py-20 bg-secondary/30">
-                    <div className="section-container mb-8">
-                        <div className="flex items-center gap-3">
+                    <div className="section-container">
+                        <div className="flex items-center gap-3 mb-10">
                             <div className="p-3 bg-primary/10 rounded-xl">
                                 <Monitor className="w-6 h-6 text-primary" />
                             </div>
                             <h2 className="heading-section">Websites</h2>
                         </div>
-                    </div>
 
-                    <div className="relative w-full overflow-hidden py-10">
-                        <div className="flex w-[200%] animate-marquee">
-                            {marqueeWebsites.map((site, index) => (
-                                <div key={`${site.id}-${index}-web`} className="w-[300px] md:w-[400px] px-4 flex-shrink-0">
-                                    <div className="group relative rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 aspect-video bg-white scale-95 hover:scale-100">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {websites.map((site) => (
+                                <div key={site.id} className="group relative rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-white">
+                                    <div className="aspect-video overflow-hidden">
                                         <img
                                             src={site.image}
                                             alt={site.title}
-                                            className="w-full h-full object-cover object-top"
+                                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                             onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
                                         />
-                                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                            <a href={site.link} target="_blank" rel="noreferrer" className="px-6 py-2 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform">
-                                                Visit Site
-                                            </a>
-                                        </div>
                                     </div>
-                                    <h3 className="mt-4 text-lg font-bold text-center">{site.title}</h3>
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <a href={site.link} target="_blank" rel="noreferrer" className="px-6 py-2 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform">
+                                            Visit Site
+                                        </a>
+                                    </div>
+                                    <div className="p-4 bg-card border-t border-border">
+                                        <h3 className="text-lg font-bold text-center">{site.title}</h3>
+                                    </div>
                                 </div>
                             ))}
                         </div>
-                    </div>
 
-                    <div className="section-container flex justify-center mt-8">
-                        <Button variant="outline" className="group rounded-full h-12 px-8">
-                            See More Websites
-                            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                        </Button>
+                        <div className="flex justify-center mt-12">
+                            <Button variant="outline" className="group rounded-full h-12 px-8">
+                                See More Websites
+                                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                            </Button>
+                        </div>
                     </div>
                 </section>
 
                 {/* Videos Section */}
                 <section className="py-20">
-                    <div className="section-container mb-8">
-                        <div className="flex items-center gap-3">
+                    <div className="section-container">
+                        <div className="flex items-center gap-3 mb-10">
                             <div className="p-3 bg-primary/10 rounded-xl">
                                 <Video className="w-6 h-6 text-primary" />
                             </div>
                             <h2 className="heading-section">Video Productions</h2>
                         </div>
-                    </div>
 
-                    <div className="relative w-full overflow-hidden py-10">
-                        <div className="flex w-[200%] animate-marquee">
-                            {marqueeVideos.map((video, index) => (
-                                <div key={`${video.id}-${index}-vid`} className="w-[300px] md:w-[400px] px-4 flex-shrink-0">
-                                    <div className="group relative rounded-2xl overflow-hidden aspect-video shadow-sm hover:shadow-md transition-all cursor-pointer scale-95 hover:scale-100">
-                                        <img
-                                            src={video.thumbnail}
-                                            alt={video.title}
-                                            className="w-full h-full object-cover"
-                                        />
-                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                                            <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[20px] border-l-white border-b-[10px] border-b-transparent ml-1" />
-                                            </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {videos.map((video) => (
+                                <div key={video.id} className="group relative rounded-2xl overflow-hidden aspect-video shadow-sm hover:shadow-md transition-all cursor-pointer">
+                                    <img
+                                        src={video.thumbnail}
+                                        alt={video.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[20px] border-l-white border-b-[10px] border-b-transparent ml-1" />
                                         </div>
-                                        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                                            <p className="text-primary-light text-sm font-medium mb-1">{video.category}</p>
-                                            <h3 className="text-white text-xl font-bold">{video.title}</h3>
-                                        </div>
+                                    </div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                                        <p className="text-primary-light text-sm font-medium mb-1">{video.category}</p>
+                                        <h3 className="text-white text-xl font-bold">{video.title}</h3>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                    </div>
 
-                    <div className="section-container flex justify-center mt-8">
-                        <Button variant="outline" className="group rounded-full h-12 px-8">
-                            See More Videos
-                            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                        </Button>
+                        <div className="flex justify-center mt-12">
+                            <Button variant="outline" className="group rounded-full h-12 px-8">
+                                See More Videos
+                                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                            </Button>
+                        </div>
                     </div>
                 </section>
 
                 {/* Posters / Graphic Design */}
                 <section className="py-20 bg-secondary/30">
-                    <div className="section-container mb-8">
-                        <div className="flex items-center gap-3">
+                    <div className="section-container">
+                        <div className="flex items-center gap-3 mb-10">
                             <div className="p-3 bg-primary/10 rounded-xl">
                                 <ImageIcon className="w-6 h-6 text-primary" />
                             </div>
                             <h2 className="heading-section">Posters & Graphics</h2>
                         </div>
-                    </div>
 
-                    <div className="relative w-full overflow-hidden py-10">
-                        <div className="flex w-[200%] animate-marquee">
-                            {marqueePosters.map((poster, index) => (
-                                <div key={`${poster.id}-${index}-post`} className="w-[250px] md:w-[300px] px-4 flex-shrink-0">
-                                    <div className="group relative rounded-xl overflow-hidden aspect-[3/4] shadow-sm hover:shadow-md transition-all scale-95 hover:scale-100">
-                                        <img
-                                            src={poster.image}
-                                            alt={poster.title}
-                                            className="w-full h-full object-cover"
-                                        />
-                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
-                                            <h3 className="text-white font-bold">{poster.title}</h3>
-                                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            {posters.map((poster) => (
+                                <div key={poster.id} className="group relative rounded-xl overflow-hidden aspect-[3/4] shadow-sm hover:shadow-md transition-all">
+                                    <img
+                                        src={poster.image}
+                                        alt={poster.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                        <h3 className="text-white font-bold">{poster.title}</h3>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                    </div>
 
-                    <div className="section-container flex justify-center mt-8">
-                        <Button variant="outline" className="group rounded-full h-12 px-8">
-                            See More Posters
-                            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                        </Button>
+                        <div className="flex justify-center mt-12">
+                            <Button variant="outline" className="group rounded-full h-12 px-8">
+                                See More Posters
+                                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                            </Button>
+                        </div>
                     </div>
                 </section>
 
                 {/* AI Videos Section */}
                 <section className="py-20">
-                    <div className="section-container mb-8">
-                        <div className="flex items-center gap-3">
+                    <div className="section-container">
+                        <div className="flex items-center gap-3 mb-10">
                             <div className="p-3 bg-purple-100 rounded-xl">
                                 <BrainCircuit className="w-6 h-6 text-purple-600" />
                             </div>
                             <h2 className="heading-section">AI Generated Videos</h2>
                         </div>
-                    </div>
 
-                    <div className="relative w-full overflow-hidden py-10">
-                        <div className="flex w-[200%] animate-marquee">
-                            {marqueeAiVideos.map((video, index) => (
-                                <div key={`${video.id}-${index}-ai`} className="w-[300px] md:w-[400px] px-4 flex-shrink-0">
-                                    <div className="group relative rounded-2xl overflow-hidden aspect-video shadow-sm hover:shadow-md transition-all cursor-pointer border border-purple-100 scale-95 hover:scale-100">
-                                        <img
-                                            src={video.thumbnail}
-                                            alt={video.title}
-                                            className="w-full h-full object-cover"
-                                        />
-                                        <div className="absolute top-4 right-4 px-3 py-1 bg-purple-600 text-white text-xs font-bold rounded-full uppercase tracking-wider">
-                                            AI Generated
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {aiVideos.map((video) => (
+                                <div key={video.id} className="group relative rounded-2xl overflow-hidden aspect-video shadow-sm hover:shadow-md transition-all cursor-pointer border border-purple-100">
+                                    <img
+                                        src={video.thumbnail}
+                                        alt={video.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute top-4 right-4 px-3 py-1 bg-purple-600 text-white text-xs font-bold rounded-full uppercase tracking-wider">
+                                        AI Generated
+                                    </div>
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[20px] border-l-white border-b-[10px] border-b-transparent ml-1" />
                                         </div>
-                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                                            <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[20px] border-l-white border-b-[10px] border-b-transparent ml-1" />
-                                            </div>
-                                        </div>
-                                        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                                            <h3 className="text-white text-xl font-bold">{video.title}</h3>
-                                        </div>
+                                    </div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                                        <h3 className="text-white text-xl font-bold">{video.title}</h3>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                    </div>
 
-                    <div className="section-container flex justify-center mt-8">
-                        <Button variant="outline" className="group rounded-full h-12 px-8">
-                            See More AI Videos
-                            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                        </Button>
+                        <div className="flex justify-center mt-12">
+                            <Button variant="outline" className="group rounded-full h-12 px-8">
+                                See More AI Videos
+                                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                            </Button>
+                        </div>
                     </div>
                 </section>
 
                 {/* Photoshoots Section */}
                 <section className="py-20 bg-secondary/30">
-                    <div className="section-container mb-8">
-                        <div className="flex items-center gap-3">
+                    <div className="section-container">
+                        <div className="flex items-center gap-3 mb-10">
                             <div className="p-3 bg-primary/10 rounded-xl">
                                 <Camera className="w-6 h-6 text-primary" />
                             </div>
                             <h2 className="heading-section">Photoshoots</h2>
                         </div>
-                    </div>
 
-                    <div className="relative w-full overflow-hidden py-10">
-                        <div className="flex w-[200%] animate-marquee">
-                            {marqueePhotoshoots.map((shoot, index) => (
-                                <div key={`${shoot.id}-${index}-photo`} className="w-[250px] md:w-[350px] px-4 flex-shrink-0">
-                                    <div className="group relative rounded-xl overflow-hidden aspect-[4/5] shadow-sm hover:shadow-md transition-all scale-95 hover:scale-100">
-                                        <img
-                                            src={shoot.image}
-                                            alt={shoot.title}
-                                            className="w-full h-full object-cover"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <div className="absolute bottom-0 left-0 p-6">
-                                                <h3 className="text-white text-xl font-bold">{shoot.title}</h3>
-                                            </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {photoshoots.map((shoot) => (
+                                <div key={shoot.id} className="group relative rounded-xl overflow-hidden aspect-[4/5] shadow-sm hover:shadow-md transition-all">
+                                    <img
+                                        src={shoot.image}
+                                        alt={shoot.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute bottom-0 left-0 p-6">
+                                            <h3 className="text-white text-xl font-bold">{shoot.title}</h3>
                                         </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                    </div>
 
-                    <div className="section-container flex justify-center mt-8">
-                        <Button variant="outline" className="group rounded-full h-12 px-8">
-                            See More Photos
-                            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                        </Button>
+                        <div className="flex justify-center mt-12">
+                            <Button variant="outline" className="group rounded-full h-12 px-8">
+                                See More Photos
+                                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                            </Button>
+                        </div>
                     </div>
                 </section>
 
