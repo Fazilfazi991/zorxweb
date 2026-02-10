@@ -133,11 +133,11 @@ const Portfolio = () => {
                             <h2 className="heading-section">Video Productions</h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[250px]">
+                        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                             {videos.map((video) => (
                                 <Dialog key={video.id}>
                                     <DialogTrigger asChild>
-                                        <div className={`group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer ${video.aspect === 'vertical' ? 'row-span-2 aspect-[9/16]' : 'aspect-video'
+                                        <div className={`group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer break-inside-avoid mb-8 ${video.aspect === 'vertical' ? 'aspect-[9/16]' : 'aspect-video'
                                             }`}>
                                             <img
                                                 src={video.thumbnail}
