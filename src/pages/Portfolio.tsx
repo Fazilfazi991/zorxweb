@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 const Portfolio = () => {
     // Demo Content Data
     const websites = [
-        { id: 1, title: "Neonights", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fneonights.ae?w=800&h=3000", link: "https://neonights.ae" },
-        { id: 2, title: "BWMC", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fbwmc.ae?w=800&h=3000", link: "https://bwmc.ae" },
-        { id: 3, title: "Tonio Senora", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ftoniosenora.com?w=800&h=3000", link: "https://toniosenora.com" },
-        { id: 4, title: "Veriquendt", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fveriquendt.com?w=800&h=3000", link: "https://veriquendt.com" },
-        { id: 5, title: "FM Auditors", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ffmauditors.com?w=800&h=3000", link: "https://fmauditors.com" },
+        { id: 1, title: "Neonights", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fneonights.ae?w=1280&h=4000", link: "https://neonights.ae" },
+        { id: 2, title: "BWMC", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fbwmc.ae?w=1280&h=4000", link: "https://bwmc.ae" },
+        { id: 3, title: "Tonio Senora", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ftoniosenora.com?w=1280&h=4000", link: "https://toniosenora.com" },
+        { id: 4, title: "Veriquendt", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fveriquendt.com?w=1280&h=4000", link: "https://veriquendt.com" },
+        { id: 5, title: "FM Auditors", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ffmauditors.com?w=1280&h=4000", link: "https://fmauditors.com" },
     ];
 
     const videos = [
