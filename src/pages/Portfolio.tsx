@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 const Portfolio = () => {
     // Demo Content Data
     const websites = [
-        { id: 1, title: "Neonights", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fneonights.ae?w=800&h=600", link: "https://neonights.ae" },
-        { id: 2, title: "BWMC", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fbwmc.ae?w=800&h=600", link: "https://bwmc.ae" },
-        { id: 3, title: "Tonio Senora", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ftoniosenora.com?w=800&h=600", link: "https://toniosenora.com" },
-        { id: 4, title: "Veriquendt", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fveriquendt.com?w=800&h=600", link: "https://veriquendt.com" },
-        { id: 5, title: "FM Auditors", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ffmauditors.com?w=800&h=600", link: "https://fmauditors.com" },
+        { id: 1, title: "Neonights", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fneonights.ae?w=800&h=3000", link: "https://neonights.ae" },
+        { id: 2, title: "BWMC", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fbwmc.ae?w=800&h=3000", link: "https://bwmc.ae" },
+        { id: 3, title: "Tonio Senora", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ftoniosenora.com?w=800&h=3000", link: "https://toniosenora.com" },
+        { id: 4, title: "Veriquendt", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fveriquendt.com?w=800&h=3000", link: "https://veriquendt.com" },
+        { id: 5, title: "FM Auditors", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ffmauditors.com?w=800&h=3000", link: "https://fmauditors.com" },
     ];
 
     const videos = [
@@ -91,16 +91,16 @@ const Portfolio = () => {
                                         <img
                                             src={site.image}
                                             alt={site.title}
-                                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                            className="w-full h-full object-cover object-top transition-all duration-[6s] ease-linear group-hover:object-bottom"
                                             onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
                                         />
                                     </div>
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <a href={site.link} target="_blank" rel="noreferrer" className="px-6 py-2 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform">
+                                        <a href={site.link} target="_blank" rel="noreferrer" className="px-6 py-2 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform z-10">
                                             Visit Site
                                         </a>
                                     </div>
-                                    <div className="p-4 bg-card border-t border-border">
+                                    <div className="p-4 bg-card border-t border-border relative z-20">
                                         <h3 className="text-lg font-bold text-center">{site.title}</h3>
                                     </div>
                                 </div>
