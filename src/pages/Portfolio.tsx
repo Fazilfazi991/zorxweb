@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const Portfolio = () => {
     // Demo Content Data
     const websites = [
-    const websites = [
         { id: 1, title: "Neonights", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fneonights.ae?w=1280&h=8000", link: "https://neonights.ae" },
         { id: 2, title: "BWMC", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fbwmc.ae?w=1280&h=8000", link: "https://bwmc.ae" },
         { id: 3, title: "Tonio Senora", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Ftoniosenora.com?w=1280&h=8000", link: "https://toniosenora.com" },
