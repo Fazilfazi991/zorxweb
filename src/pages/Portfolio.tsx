@@ -15,7 +15,7 @@ const Portfolio = () => {
         { id: 6, title: "JH Accounting", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fjhaccounting.ae?w=1280&h=8000", link: "https://jhaccounting.ae" },
         { id: 7, title: "Ikigai Auto Parts", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fikigaiautoparts.com?w=1280&h=8000", link: "https://ikigaiautoparts.com" },
         { id: 8, title: "Step Vision Hotel Supplies", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fstepvisionhotelsupplies.com?w=1280&h=8000", link: "https://stepvisionhotelsupplies.com" },
-        { id: 9, title: "Universal Yoga", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Funiversalyoga.ae?w=1280&h=8000", link: "https://universalyoga.ae" },
+        { id: 9, title: "Universal Yoga", image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.nuniversalyoga.ae?w=1280&h=8000", link: "https://www.nuniversalyoga.ae" },
     ];
 
     const videos = [
