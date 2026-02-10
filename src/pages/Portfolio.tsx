@@ -29,11 +29,11 @@ const Portfolio = () => {
     ];
 
     const posters = [
-        { id: 1, title: "Summer Campaign", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80" },
-        { id: 2, title: "Event Promo", image: "https://images.unsplash.com/photo-1626785774573-4b79931434f3?w=800&q=80" },
-        { id: 3, title: "Product Showcase", image: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=800&q=80" },
-        { id: 4, title: "Brand Identity", image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80" },
-        { id: 5, title: "Digital Art", image: "https://images.unsplash.com/photo-1558655146-d09347e0c766?w=800&q=80" },
+        { id: 1, title: "Summer Campaign", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1280&q=80" },
+        { id: 2, title: "Event Promo", image: "https://images.unsplash.com/photo-1626785774573-4b79931434f3?w=1280&q=80" },
+        { id: 3, title: "Product Showcase", image: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=1280&q=80" },
+        { id: 4, title: "Brand Identity", image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1280&q=80" },
+        { id: 5, title: "Digital Art", image: "https://images.unsplash.com/photo-1558655146-d09347e0c766?w=1280&q=80" },
     ];
 
     const aiVideos = [
@@ -44,11 +44,11 @@ const Portfolio = () => {
     ];
 
     const photoshoots = [
-        { id: 1, title: "Fashion Editorial", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80" },
-        { id: 2, title: "Corporate Headshots", image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" },
-        { id: 3, title: "Product Photography", image: "https://images.unsplash.com/photo-1526170375885-4d6036fab570?w=800&q=80" },
-        { id: 4, title: "Lifestyle Shot", image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&q=80" },
-        { id: 5, title: "Studio Session", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80" },
+        { id: 1, title: "Fashion Editorial", image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1280&q=80" },
+        { id: 2, title: "Corporate Headshots", image: "https://images.unsplash.com/photo-1556157382-97eda2d6229b?w=1280&q=80" },
+        { id: 3, title: "Product Photography", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1280&q=80" },
+        { id: 4, title: "Lifestyle Shot", image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1280&q=80" },
+        { id: 5, title: "Studio Session", image: "https://images.unsplash.com/photo-1595152772835-219883cf5cd3?w=1280&q=80" },
     ];
 
     return (
