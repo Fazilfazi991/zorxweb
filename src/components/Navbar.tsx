@@ -9,6 +9,12 @@ const navLinks = [
   { label: "Portfolio", href: "/portfolio", isRoute: true },
   { label: "Services", href: "/services", isRoute: true },
   { label: "Web Dev", href: "/web-development", isRoute: true },
+  { label: "SEO", href: "/services/seo", isRoute: true },
+  { label: "Social Media", href: "/services/social-media", isRoute: true },
+  { label: "Google Ads", href: "/services/google-ads", isRoute: true },
+  { label: "Performance", href: "/services/performance-marketing", isRoute: true },
+  { label: "Video", href: "/services/video-production", isRoute: true },
+  { label: "AI", href: "/services/ai-automation", isRoute: true },
   { label: "Contact", href: "/contact", isRoute: true },
 ];
 

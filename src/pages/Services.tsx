@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import { Search, MousePointerClick, Share2, Layout, FileText, Mail, ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,42 +10,48 @@ const services = [
         title: "Search Engine Optimization (SEO)",
         description: "Improve rankings, visibility, and organic traffic with data-driven SEO strategies tailored for the UAE market.",
         features: ["Keyword Research", "On-Page Optimization", "Technical SEO", "Monthly Reporting"],
-        image: "https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?q=80&w=800&auto=format&fit=crop",
+        link: "/services/seo"
     },
     {
         icon: MousePointerClick,
         title: "Google Ads & PPC",
         description: "High-converting paid campaigns with measurable ROI. We optimize every dirham of your ad spend.",
         features: ["Search Ads", "Display Ads", "Remarketing", "Conversion Tracking"],
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+        link: "/services/google-ads"
     },
     {
         icon: Share2,
         title: "Social Media Marketing",
         description: "Grow your brand on Instagram, Facebook, LinkedIn & TikTok with engaging content and targeted campaigns.",
         features: ["Content Calendar", "Community Management", "Paid Social Ads", "Influencer Outreach"],
-        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop",
+        link: "/services/social-media"
     },
     {
         icon: Layout,
         title: "Website Design & CRO",
         description: "Conversion-optimized websites that drive leads and sales. Beautiful, fast, and built for results.",
         features: ["Responsive Design", "UX/UI Audit", "A/B Testing", "Speed Optimization"],
-        image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=800&auto=format&fit=crop",
+        link: "/web-development"
     },
     {
         icon: FileText,
-        title: "Content Marketing",
-        description: "Strategic content that builds authority and trust. From blogs to videos, we tell your brand story.",
-        features: ["Blog Writing", "Video Production", "Case Studies", "Copywriting"],
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop"
+        title: "Video Production & Content",
+        description: "Cinema-grade brand films, commercials, and social content that captivates your audience.",
+        features: ["Brand Films", "Social Media Content", "Animation", "Scriptwriting"],
+        image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=800&auto=format&fit=crop",
+        link: "/services/video-production"
     },
     {
         icon: Mail,
-        title: "Email & Automation",
-        description: "Nurture leads and increase customer lifetime value with smart email sequences and automation.",
-        features: ["Drip Campaigns", "Newsletter Setup", "Split Testing", "Segmentation"],
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop"
+        title: "AI Automation",
+        description: "Automate customer support, lead qualification, and operations with custom AI agents.",
+        features: ["24/7 Chatbots", "Workflow Automation", "CRM Integration", "Lead Qualifying"],
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
+        link: "/services/ai-automation"
     },
 ];
 
@@ -124,9 +131,11 @@ const Services = () => {
                                         </ul>
 
                                         <div className="pt-4">
-                                            <Button variant="outline" className="w-full group/btn border-primary/20 hover:border-primary hover:bg-primary/5">
-                                                Learn More
-                                                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
+                                            <Button variant="outline" className="w-full group/btn border-primary/20 hover:border-primary hover:bg-primary/5" asChild>
+                                                <Link to={service.link}>
+                                                    Learn More
+                                                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
+                                                </Link>
                                             </Button>
                                         </div>
                                     </div>

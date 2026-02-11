@@ -8,6 +8,7 @@ import PortfolioGrid from "@/components/PortfolioGrid";
 import CTASection from "@/components/CTASection";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Link } from "react-router-dom";
 
 const features = [
     {
@@ -61,14 +62,13 @@ const WebDevelopment = () => {
             <Navbar />
             <main>
                 {/* Hero Section */}
-                <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gray-950 text-white">
+                <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-[#050505] text-white">
+                    {/* Dynamic Background Elements */}
                     <div className="absolute inset-0 z-0">
-                        <img
-                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
-                            alt="Web Development Background"
-                            className="w-full h-full object-cover opacity-10"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/80 via-gray-950/90 to-gray-950" />
+                        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-500/10 rounded-full blur-[120px] animate-pulse" />
+                        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+                        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505]" />
                     </div>
 
                     <div className="section-container relative z-10">
@@ -80,66 +80,118 @@ const WebDevelopment = () => {
                                     Premium Web Solutions
                                 </div>
 
-                                <h1 className="heading-display text-white animate-fade-up delay-100 opacity-0" style={{ animationFillMode: 'forwards' }}>
-                                    Custom <span className="text-primary">Web Development</span> That Drives Growth
+                                <h1 className="heading-display text-white animate-fade-up delay-100 opacity-0 mb-6 leading-tight" style={{ animationFillMode: 'forwards' }}>
+                                    Build Your <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Digital Empire</span>
                                 </h1>
 
-                                <p className="text-xl text-gray-400 animate-fade-up delay-200 opacity-0 max-w-xl mx-auto lg:mx-0" style={{ animationFillMode: 'forwards' }}>
-                                    We build fast, secure, and beautiful websites tailored to your business needs using the latest technologies.
+                                <p className="text-xl text-gray-300 animate-fade-up delay-200 opacity-0 max-w-xl mx-auto lg:mx-0 leading-relaxed" style={{ animationFillMode: 'forwards' }}>
+                                    We craft award-winning websites that blend stunning aesthetics with powerful performance. Stop settling for "boring".
                                 </p>
 
-                                <div className="flex flex-wrap gap-4 animate-fade-up delay-300 opacity-0 justify-center lg:justify-start" style={{ animationFillMode: 'forwards' }}>
-                                    <div className="flex items-center gap-2 text-white font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10">
-                                        <Shield className="w-5 h-5 text-primary" />
-                                        <span>Secure & Scalable</span>
+                                <div className="flex flex-wrap gap-4 animate-fade-up delay-300 opacity-0 justify-center lg:justify-start mt-8" style={{ animationFillMode: 'forwards' }}>
+                                    <div className="flex items-center gap-2 text-white font-medium bg-white/5 backdrop-blur-md px-5 py-3 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+                                        <Shield className="w-5 h-5 text-blue-400" />
+                                        <span>Enterprise Security</span>
                                     </div>
-                                    <div className="flex items-center gap-2 text-white font-medium bg-white/5 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10">
-                                        <Zap className="w-5 h-5 text-primary" />
-                                        <span>Lightning Fast</span>
+                                    <div className="flex items-center gap-2 text-white font-medium bg-white/5 backdrop-blur-md px-5 py-3 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+                                        <Zap className="w-5 h-5 text-yellow-400" />
+                                        <span>Blazing Fast</span>
                                     </div>
                                 </div>
 
-                                <div className="pt-8 border-t border-white/10 animate-fade-up delay-400 opacity-0" style={{ animationFillMode: 'forwards' }}>
-                                    <p className="text-sm text-gray-400 mb-4">Trusted by innovative companies</p>
-                                    <div className="flex flex-wrap gap-6 items-center justify-center lg:justify-start opacity-70 grayscale">
-                                        {/* Placeholder Logos */}
-                                        <div className="text-xl font-bold">Acme Corp</div>
-                                        <div className="text-xl font-bold">GlobalTech</div>
-                                        <div className="text-xl font-bold">Nebula</div>
-                                        <div className="text-xl font-bold">FoxRun</div>
-                                    </div>
+                                <div className="flex flex-wrap gap-4 animate-fade-up delay-400 opacity-0 mt-8" style={{ animationFillMode: 'forwards' }}>
+                                    <Button size="lg" className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 h-12 shadow-lg shadow-purple-900/20" asChild>
+                                        <Link to="/contact">
+                                            Connect with Us
+                                            <ArrowRight className="w-4 h-4 ml-2" />
+                                        </Link>
+                                    </Button>
+                                    <Button size="lg" variant="outline" className="rounded-full border-white/20 bg-white/5 hover:bg-white/10 text-white px-8 h-12 backdrop-blur-sm" asChild>
+                                        <Link to="/portfolio">View Our Portfolio</Link>
+                                    </Button>
                                 </div>
+
+
                             </div>
 
-                            {/* Right Form */}
-                            <div className="lg:w-full max-w-md mx-auto lg:ml-auto animate-fade-left delay-300 opacity-0" style={{ animationFillMode: 'forwards' }}>
-                                <div className="bg-card p-8 rounded-2xl shadow-lg border border-border/50">
-                                    <h3 className="text-2xl font-bold mb-2">Get a Free Quote</h3>
-                                    <p className="text-muted-foreground mb-6">Fill out the form below and we'll get back to you within 24 hours.</p>
+                            {/* Right Form - Glassmorphism */}
+                            <div className="lg:w-full max-w-md mx-auto lg:ml-auto animate-fade-up delay-300 opacity-0" style={{ animationFillMode: 'forwards' }}>
+                                <div className="bg-white/5 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border border-white/10 relative overflow-hidden">
+                                    {/* Glass reflection */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50 pointer-events-none" />
 
-                                    <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <div className="space-y-2">
-                                                <label htmlFor="name" className="text-sm font-medium">Name</label>
-                                                <Input id="name" placeholder="John Doe" />
+                                    <div className="relative z-10">
+                                        <div className="mb-6">
+                                            <h3 className="text-2xl font-bold text-white mb-2">Start Your Project</h3>
+                                            <p className="text-gray-400 text-sm">Fill out the form below for a free consultation.</p>
+                                        </div>
+
+                                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                                            <div className="grid grid-cols-2 gap-4">
+                                                <div className="space-y-2">
+                                                    <label htmlFor="name" className="text-xs font-medium text-gray-300 uppercase tracking-wider">Name</label>
+                                                    <Input
+                                                        id="name"
+                                                        placeholder="John Doe"
+                                                        className="bg-black/20 border-white/10 text-white placeholder:text-gray-600 focus:border-purple-500 focus:ring-purple-500/20"
+                                                    />
+                                                </div>
+                                                <div className="space-y-2">
+                                                    <label htmlFor="phone" className="text-xs font-medium text-gray-300 uppercase tracking-wider">Phone</label>
+                                                    <Input
+                                                        id="phone"
+                                                        placeholder="+971..."
+                                                        className="bg-black/20 border-white/10 text-white placeholder:text-gray-600 focus:border-purple-500 focus:ring-purple-500/20"
+                                                    />
+                                                </div>
                                             </div>
                                             <div className="space-y-2">
-                                                <label htmlFor="phone" className="text-sm font-medium">Phone</label>
-                                                <Input id="phone" placeholder="+971..." />
+                                                <label htmlFor="email" className="text-xs font-medium text-gray-300 uppercase tracking-wider">Email</label>
+                                                <Input
+                                                    id="email"
+                                                    type="email"
+                                                    placeholder="john@example.com"
+                                                    className="bg-black/20 border-white/10 text-white placeholder:text-gray-600 focus:border-purple-500 focus:ring-purple-500/20"
+                                                />
                                             </div>
+                                            <div className="space-y-2">
+                                                <label htmlFor="message" className="text-xs font-medium text-gray-300 uppercase tracking-wider">Project Details</label>
+                                                <Textarea
+                                                    id="message"
+                                                    placeholder="Tell us about your project..."
+                                                    className="bg-black/20 border-white/10 text-white placeholder:text-gray-600 focus:border-purple-500 focus:ring-purple-500/20 min-h-[100px]"
+                                                />
+                                            </div>
+                                            <Button type="submit" className="w-full text-lg h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 border-0 shadow-lg shadow-purple-900/20">
+                                                Request Free Quote
+                                            </Button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div className="mt-8 pt-8 border-t border-white/10 animate-fade-up delay-500 opacity-0" style={{ animationFillMode: 'forwards' }}>
+                                    <p className="text-sm text-gray-400 mb-4 text-center">Trusted by innovative companies</p>
+                                    <div className="relative flex overflow-x-hidden group">
+                                        <div className="animate-marquee flex gap-8 items-center whitespace-nowrap opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
+                                            {/* Original Logos */}
+                                            <div className="text-xl font-bold text-white mx-4">Acme Corp</div>
+                                            <div className="text-xl font-bold text-white mx-4">GlobalTech</div>
+                                            <div className="text-xl font-bold text-white mx-4">Nebula</div>
+                                            <div className="text-xl font-bold text-white mx-4">FoxRun</div>
+
+                                            {/* Duplicate for seamless loop */}
+                                            <div className="text-xl font-bold text-white mx-4">Acme Corp</div>
+                                            <div className="text-xl font-bold text-white mx-4">GlobalTech</div>
+                                            <div className="text-xl font-bold text-white mx-4">Nebula</div>
+                                            <div className="text-xl font-bold text-white mx-4">FoxRun</div>
+
+                                            <div className="text-xl font-bold text-white mx-4">Acme Corp</div>
+                                            <div className="text-xl font-bold text-white mx-4">GlobalTech</div>
+                                            <div className="text-xl font-bold text-white mx-4">Nebula</div>
+                                            <div className="text-xl font-bold text-white mx-4">FoxRun</div>
                                         </div>
-                                        <div className="space-y-2">
-                                            <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                            <Input id="email" type="email" placeholder="john@example.com" />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <label htmlFor="message" className="text-sm font-medium">Project Details</label>
-                                            <Textarea id="message" placeholder="Tell us about your project..." />
-                                        </div>
-                                        <Button type="submit" className="w-full text-lg h-12">
-                                            Request Quote
-                                        </Button>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -147,8 +199,12 @@ const WebDevelopment = () => {
                 </section>
 
                 {/* Features Section */}
-                <section className="py-20 bg-gray-50 dark:bg-gray-900/50">
-                    <div className="section-container">
+                <section className="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.02]" />
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-100/50 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
+                    <div className="section-container relative z-10">
                         <div className="text-center max-w-2xl mx-auto mb-16">
                             <h2 className="heading-section mb-6">Built for Excellence</h2>
                             <p className="text-lg text-muted-foreground">
@@ -158,9 +214,9 @@ const WebDevelopment = () => {
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {features.map((feature, index) => (
-                                <div key={feature.title} className="bg-background p-8 rounded-2xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
-                                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                                        <feature.icon className="w-6 h-6 text-primary" />
+                                <div key={feature.title} className="bg-white dark:bg-card p-8 rounded-2xl border border-border/50 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-md shadow-blue-500/20">
+                                        <feature.icon className="w-6 h-6 text-white" />
                                     </div>
                                     <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                                     <p className="text-muted-foreground">{feature.description}</p>
@@ -171,7 +227,7 @@ const WebDevelopment = () => {
                 </section>
 
                 {/* Portfolio Section */}
-                <section className="py-20">
+                <section className="py-20 bg-gray-50/50 dark:bg-gray-900/50">
                     <div className="section-container">
                         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
                             <div className="max-w-2xl">
@@ -190,30 +246,32 @@ const WebDevelopment = () => {
                 </section>
 
                 {/* Process Section */}
-                <section className="py-20 bg-primary text-white">
-                    <div className="section-container">
+                <section className="py-24 bg-[#050505] text-white relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+
+                    <div className="section-container relative z-10">
                         <div className="text-center max-w-2xl mx-auto mb-16">
                             <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Process</h2>
-                            <p className="text-xl text-white/80">
+                            <p className="text-xl text-white/60">
                                 A streamlined workflow to bring your vision to life.
                             </p>
                         </div>
 
                         <div className="grid md:grid-cols-4 gap-8">
                             {processSteps.map((step, index) => (
-                                <div key={step.title} className="relative">
-                                    <div className="text-6xl font-bold text-white/10 mb-4">{step.number}</div>
-                                    <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                                    <p className="text-white/80">{step.description}</p>
+                                <div key={step.title} className="relative group">
+                                    <div className="text-6xl font-bold text-white/5 mb-4 group-hover:text-blue-500/10 transition-colors duration-500">{step.number}</div>
+                                    <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">{step.title}</h3>
+                                    <p className="text-white/60 group-hover:text-white/80 transition-colors">{step.description}</p>
                                     {index < processSteps.length - 1 && (
-                                        <div className="hidden md:block absolute top-8 right-0 w-full h-px bg-white/20 translate-x-1/2" />
+                                        <div className="hidden md:block absolute top-8 right-0 w-full h-px bg-gradient-to-r from-white/10 to-transparent translate-x-1/2" />
                                     )}
                                 </div>
                             ))}
                         </div>
 
                         <div className="text-center mt-12">
-                            <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
+                            <Button size="lg" className="bg-white text-black hover:bg-gray-200 border-0 rounded-full px-8 h-12 font-medium">
                                 Start Your Journey
                             </Button>
                         </div>
