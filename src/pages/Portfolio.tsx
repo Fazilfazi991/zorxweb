@@ -53,12 +53,7 @@ const Portfolio = () => {
 
     return (
         <div className="dark min-h-screen bg-background text-foreground overflow-x-hidden">
-            <SEO
-                title="Our Portfolio | ZORX Media | Digital Agency Dubai"
-                description="Explore our portfolio of successful digital marketing campaigns, web designs, and video productions for clients in Dubai and the UAE."
-                canonical="/portfolio"
-                keywords="digital marketing portfolio, web design portfolio dubai, video production dubai work"
-            />
+
             <Navbar />
             <main>
                 {/* Hero Section */}
